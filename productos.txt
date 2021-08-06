@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "product": {
+      "title": "Heladera",
+      "price": 80000
+    }
+  },
+  {
+    "id": 2,
+    "product": {
+      "title": "Lavarropas",
+      "price": 60000
+    }
+  },
+  {
+    "id": 3,
+    "product": {
+      "title": "Heladera",
+      "price": 80000
+    }
+  },
+  {
+    "id": 4,
+    "product": {
+      "title": "Lavarropas",
+      "price": 60000
+    }
+  },
+  {
+    "id": 5,
+    "product": {
+      "title": "Heladera",
+      "price": 80000
+    }
+  },
+  {
+    "id": 6,
+    "product": {
+      "title": "Lavarropas",
+      "price": 60000
+    }
+  }
+]
