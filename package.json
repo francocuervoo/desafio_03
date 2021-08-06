@@ -1,12 +1,12 @@
 {
-  "name": "desafio",
+  "name": "express",
   "version": "1.0.0",
   "description": "",
-  "main": "desafio.js",
+  "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:debug": "nodemon --inspect desafio.js",
-    "express": "nodemon --inspect desafio.js"
+    "start:debug": "nodemon --inspect express.js",
+    "express": "nodemon --inspect express.js"
   },
   "keywords": [],
   "author": "",
