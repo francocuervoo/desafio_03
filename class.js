@@ -30,34 +30,14 @@ class Contenedor {
   async getById(id) {
     await this.getAll();
     try {
-      await fs.promises.writeFile(
-        this.fileName,
-        JSON.stringify(this.data, null, 2)
-      );
       //Busco el objeto con ese id
       const objetoId = this.data.find((dat) => dat.id === id);
       if (objetoId) {
-        return console.log("El objeto con el id", id, "es", objetoId);
+        // return console.log("El objeto con el id", id, "es", objetoId);
+        return objetoId;
       }
     } catch (error) {
       return null;
-    }
-  }
-
-  async getBigId() {
-    try {
-      const data = await fs.promises.readFile(this.fileName, "utf-8");
-      if (data) {
-        this.data = JSON.parse(data);
-        this.data.map((producto) => {
-          if (this.id < producto.id) this.id = producto.id;
-        });
-        //Este es el id más alto del archivo
-        return this.id;
-      }
-    } catch (error) {
-      //Si hay un error que no retorne nada. Que siga.
-      return;
     }
   }
 

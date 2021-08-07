@@ -20,9 +20,8 @@ async function allFunctionsContenedor() {
   await objetoContenedor.save(p1);
   await objetoContenedor.save(p2);
   // await objetoContenedor.getAll();
-  // await objetoContenedor.getById(3);
-  await objetoContenedor.getBigId();
-  // await objetoContenedor.deleteById(3);
+  //await objetoContenedor.getById(3);
+  //await objetoContenedor.deleteById(5);
   //await objetoContenedor.deleteAll();
 }
 allFunctionsContenedor();
@@ -30,7 +29,7 @@ allFunctionsContenedor();
 app.get("/", (req, res) => {
   res.send("<h1 style='color: #4B4B4B'>Desafío Clase 3</h1>");
 });
-
+ 
 app.get("/productos", async (req, res) => {
   //Acá quiero que lea el archivo y me devuelve el objeto vacío
   let productos = await objetoContenedor.getAll();
@@ -38,8 +37,8 @@ app.get("/productos", async (req, res) => {
 });
 
 app.get("/productoRandom", async (req, res) => {
-    let min = 1;
-  let max = objetoContenedor.getBigId();
+  let min = 1;
+  let max = (await objetoContenedor.getAll()).length;
   let randomId = Math.floor(Math.random() * (max - min + 1) + min);
   let randomProduct = await objetoContenedor.getById(randomId);
   res.send(randomProduct);
@@ -54,5 +53,3 @@ const server = app.listen(PORT, () => {
 server.on("error", (error) => console.log(`Error en servidor ${error}`));
 
 //npm run express
-//ver de neuvo lo de glitch
-// minuto 1.47.41
