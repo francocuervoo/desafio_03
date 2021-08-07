@@ -29,7 +29,7 @@ allFunctionsContenedor();
 app.get("/", (req, res) => {
   res.send("<h1 style='color: #4B4B4B'>Desafío Clase 3</h1>");
 });
- 
+
 app.get("/productos", async (req, res) => {
   //Acá quiero que lea el archivo y me devuelve el objeto vacío
   let productos = await objetoContenedor.getAll();
@@ -37,14 +37,15 @@ app.get("/productos", async (req, res) => {
 });
 
 app.get("/productoRandom", async (req, res) => {
+  let arrayProducts = await objetoContenedor.getAll();
   let min = 1;
-  let max = (await objetoContenedor.getAll()).length;
+  let max = arrayProducts.length;
   let randomId = Math.floor(Math.random() * (max - min + 1) + min);
-  let randomProduct = await objetoContenedor.getById(randomId);
+  let randomProduct = arrayProducts[randomId];
   res.send(randomProduct);
 });
 
-const PORT = 3030;
+const PORT = 8080;
 
 const server = app.listen(PORT, () => {
   console.log(`Servidor express corriendo en el puerto ${PORT}`);
@@ -53,3 +54,4 @@ const server = app.listen(PORT, () => {
 server.on("error", (error) => console.log(`Error en servidor ${error}`));
 
 //npm run express
+// 1:49:26
